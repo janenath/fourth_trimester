@@ -61,3 +61,307 @@ Migrating to AddContentfulFieldsToArticle (20200215164728)
   [1m[35m (11.6ms)[0m  [1m[35mALTER TABLE "articles" ADD "contentful_id" article[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+Started GET "/" for ::1 at 2020-02-15 08:52:54 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.2.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.2.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8556717826867571445)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddContentfulFieldsToArticle (20200215164728)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "articles" ADD "contentful_id" article[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8556717826867571445)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddContentfulFieldsToArticle (20200215164728)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "article" ADD "contentful_id" article[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8556717826867571445)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddContentfulFieldsToArticle (20200215164728)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "contentful_id" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200215164728"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (21.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-15 08:55:34 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Jane/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jane/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 28.5ms | Allocations: 293)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.0ms | Allocations: 1501)
+
+
+Started GET "/articles" for ::1 at 2020-02-15 08:55:39 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 5067)
+
+
+  
+NameError (undefined local variable or method `iloj6austy6j' for #<Class:0x00007fd543485650>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:00:05 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms | Allocations: 5218)
+
+
+  
+NameError (undefined local variable or method `iloj6austy6j' for #<Class:0x00007fd543485650>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:01:10 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 4891)
+
+
+  
+NameError (undefined local variable or method `iloj6austy6j' for #<Class:0x00007fd5435ef388>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:02:49 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 4646)
+
+
+  
+NoMethodError (undefined method `space_id=' for #<Class:0x00007f876f451228>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:04:26 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 4509)
+
+
+  
+NoMethodError (undefined method `space_id=' for #<Class:0x00007ff0574d0838>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8556717826867571445)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddMoreContentfulFieldsToArticle (20200215170517)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mALTER TABLE "articles" ADD "space_id" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "articles" ADD "access_token" character varying[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "articles" ADD "content_type_id" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200215170517"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for ::1 at 2020-02-15 09:06:21 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4616)
+
+
+  
+NoMethodError (undefined method `space_id=' for #<Class:0x00007fe7cd467820>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:07:25 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 4903)
+
+
+  
+NameError (undefined local variable or method `contentful_renderable' for #<Class:0x00007f81c5a5da90>):
+  
+app/models/article.rb:2:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:08:30 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 4797)
+
+
+  
+NameError (undefined local variable or method `contentfulRenderable' for #<Class:0x00007f81c4ce55c0>):
+  
+app/models/article.rb:2:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:09:09 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 4745)
+
+
+  
+NameError (undefined local variable or method `contentful_renderable' for #<Class:0x00007f81c90626e0>):
+  
+app/models/article.rb:2:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:09:23 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 4728)
+
+
+  
+NameError (undefined local variable or method `contentfulRenderable' for #<Class:0x00007f81c4d688d0>):
+  
+app/models/article.rb:2:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:09:54 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4477)
+
+
+  
+NoMethodError (undefined method `space_id=' for #<Class:0x00007f81c9098970>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:10:46 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4500)
+
+
+  
+NoMethodError (undefined method `space_id=' for #<Class:0x00007f81c5734918>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/articles" for ::1 at 2020-02-15 09:10:57 -0800
+Processing by ArticlesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4492)
+
+
+  
+NoMethodError (undefined method `space_id=' for #<Class:0x00007f81c90427a0>):
+  
+app/models/article.rb:4:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2020-02-15 09:19:16 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Jane/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jane/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 36.3ms | Allocations: 293)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.0ms | Allocations: 1501)
+
+
+Started GET "/articles" for ::1 at 2020-02-15 09:19:21 -0800
+Processing by ArticlesController#index as HTML
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 399)
+
+
+Started GET "/articles" for ::1 at 2020-02-15 09:20:21 -0800
+Processing by ArticlesController#index as HTML
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/articles/1" for ::1 at 2020-02-15 09:23:08 -0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 185)
+
+
+  
+ArgumentError (Timeout parameters must be all omitted or all present):
+  
+app/controllers/articles_controller.rb:44:in `set_article'
+Started GET "/articles/4GfLUyCFtWE3f8H5Nlkhk9" for ::1 at 2020-02-15 09:23:37 -0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4GfLUyCFtWE3f8H5Nlkhk9"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+  
+ArgumentError (Timeout parameters must be all omitted or all present):
+  
+app/controllers/articles_controller.rb:44:in `set_article'
+Started GET "/articles" for ::1 at 2020-02-15 09:26:28 -0800
+Processing by ArticlesController#index as HTML
+Completed 200 OK in 57ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/articles/4GfLUyCFtWE3f8H5Nlkhk9" for ::1 at 2020-02-15 09:26:36 -0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4GfLUyCFtWE3f8H5Nlkhk9"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 177)
+
+
+  
+ArgumentError (Timeout parameters must be all omitted or all present):
+  
+app/controllers/articles_controller.rb:44:in `set_article'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8556717826867571445)[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumn (20200215172952)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "article" DROP COLUMN "contentful_id"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8556717826867571445)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveColumn (20200215172952)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.8ms)[0m  [1m[35mALTER TABLE "articles" DROP COLUMN "contentful_id"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "articles" DROP COLUMN "space_id"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "articles" DROP COLUMN "access_token"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "articles" DROP COLUMN "content_type_id"[0m
+  [1m[36mprimary::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200215172952"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8556717826867571445)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
