@@ -1,1 +1,0 @@
-export const READ_ARTICLE = 'READ_ARTICLE';

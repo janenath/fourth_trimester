@@ -5,6 +5,9 @@ class ToDo extends Component {
         return(
             <div>
                 <h1>today</h1>
+                <ul>
+                    <li>read <a href="./articles">articles</a></li>
+                </ul>
             </div>
         )
     }
