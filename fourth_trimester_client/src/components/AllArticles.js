@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FETCH_ARTICLES_BEGIN, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE } from '../actions/articleActions'
-// import { callApi } from '../actions/articleActions'
+
 
 const axios = require ('axios')
 class AllArticles extends Component {
@@ -60,6 +60,8 @@ const mapStateToProps = (state) => ({
     loading: state.articles.loading,
     error: state.articles.error
 })
+
+
 
 
 export default connect(mapStateToProps)(AllArticles);
