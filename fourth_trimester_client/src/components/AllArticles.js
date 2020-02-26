@@ -4,31 +4,30 @@ import { connect } from 'react-redux';
 import { fetchArticles } from '../actions/articleActions';
 
 class AllArticles extends Component {
-    // componentDidMount() {
-    //     fetchArticles();
-    // }
-    // render() {
-    //     const { error, loading, articles } = this.props;
+    componentDidMount() {
+        fetchArticles();
+    }
+    render() {
+            const { error, loading, articles } = this.props;
 
-    //     if (error) {
-    //         return <div>Error! {error.message}</div>;
-    //     }
+        if (error) {
+            return <div>Error! {error.message}</div>;
+        }
 
-    //     if (loading) {
-    //         return<div>Loading...</div>;
-    //     }
+        if (loading) {
+            return<div>Loading...</div>;
+        }
 
-    //     const articleItems = articles.map(article => (
-    //         <div key={article.id}>
-    //             <h3>{article.title}</h3>
-    //             <p>{article.body}</p>
-    //         </div>
-    //     ));
-    render(){
+        const articleItems = articles.map(article => (
+            <div key={article.id}>
+                <h3>{article.title}</h3>
+                <p>{article.body}</p>
+            </div>
+        ));
         return(
             <main>
                 <h1>topics</h1>
-                {/* {articleItems} */}
+                {articleItems}
             </main>
         )
     }
