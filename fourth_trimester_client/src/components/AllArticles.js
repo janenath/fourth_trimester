@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
 import { FETCH_ARTICLES_BEGIN, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE } from '../actions/articleActions'
-import { CALL_API } from '../middleware/api'
+// import { callApi } from '../actions/articleActions'
 
+const axios = require ('axios')
 class AllArticles extends Component {
-    fetchArticles() {
-        console.log('fetching')
-        return{
-          [CALL_API]: {
-            endpoint: '/articles',
-            types: [FETCH_ARTICLES_BEGIN, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE]
-          }
-        }
-      }
+    callApi(){
+        let token = localStorage.getItem('auth_token') || null
+        let config = {}
+        if(token) {
+            config = {
+                url: 'http://localhost:3000/articles',
+                headers: { 'Authorization': `Bearer ${token}` }
+            }
+            } else {
+                throw "No token saved!"
+        } 
+        axios(config)
+        .then(response=>{
+          const articles = response.request.response
+          console.log(articles)
+          this.setState({articles: articles})         
+        })
+    }
     componentDidMount() {
-        this.fetchArticles();
+       this.callApi()
     }
     render(){
         const { error, loading, articles } = this.props;
@@ -26,8 +35,7 @@ class AllArticles extends Component {
         if (loading) {
             return<div>Loading...</div>;
         }
-
-        const articleItems = articles.map(article => (
+        const articleItems = this.props.articles.map(article => (
             <div key={article.id}>
                 <h3>{article.title}</h3>
                 <p>{article.body}</p>
