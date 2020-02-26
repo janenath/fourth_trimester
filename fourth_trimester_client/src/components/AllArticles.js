@@ -7,13 +7,12 @@ class AllArticles extends Component {
     componentDidMount() {
         fetchArticles();
     }
-    render() {
-            const { error, loading, articles } = this.props;
 
+    render(){
+        const { error, loading, articles } = this.props;
         if (error) {
             return <div>Error! {error.message}</div>;
         }
-
         if (loading) {
             return<div>Loading...</div>;
         }
@@ -24,6 +23,7 @@ class AllArticles extends Component {
                 <p>{article.body}</p>
             </div>
         ));
+        console.log(articles)
         return(
             <main>
                 <h1>topics</h1>

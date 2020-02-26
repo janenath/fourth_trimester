@@ -8,7 +8,6 @@ import {
 import PropTypes from 'prop-types'
 import { logoutUser } from '../actions/userActions'
 
-import LoggedOutRoute from '../routes/LoggedOutRoute'
 
 export default class LogOut extends Component {
     render() {
@@ -23,7 +22,6 @@ export default class LogOut extends Component {
 
 handleClick(event) {
     this.props.onLogoutClick()
-    // console.log(this.props)
   }
 }
 

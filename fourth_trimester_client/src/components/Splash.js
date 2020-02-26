@@ -9,7 +9,7 @@ import {
 import { Provider, connect } from 'react-redux'
 import logo from '../header_logo.svg'
 
-import {loginUser} from '../actions/userActions'
+import { loginUser, signupUser } from '../actions/userActions'
 import LogIn from '../components/LogIn'
 import SignUp from '../components/SignUp'
 
@@ -28,10 +28,15 @@ class Splash extends Component {
                     <LogIn 
                         isAuthenticated={!isAuthenticated}
                         errorMessage={errorMessage}
-                        onLoginClick={ creds => dispatch(loginUser(creds)) }/>
+                        onLoginClick={ creds => dispatch(loginUser(creds)) }
+                    />
                 </Route>
                 <Route path="/signup">
-                    <SignUp/>
+                    <SignUp
+                        isAuthenticated={!isAuthenticated}
+                        errorMessage={errorMessage}
+                        onSignupClick = {creds => dispatch(signupUser(creds)) }
+                    />
                 </Route>
             </Switch>
         </main>
