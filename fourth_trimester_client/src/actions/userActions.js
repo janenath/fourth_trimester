@@ -1,3 +1,5 @@
+import history from '../history'
+
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
@@ -8,8 +10,8 @@ export const SIGNUP_REQUEST = 'SIGNUP_REQUEST'
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE'
 
-export function loginUser(creds) {
-    
+
+export function loginUser(creds) {  
     let config = {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -27,11 +29,13 @@ export function loginUser(creds) {
                     dispatch(loginError(user.message))
                     return Promise.reject(user)
                 } else {
-                    localStorage.setItem('id_token', user.id_token)
-                    localStorage.setItem('access_token', user.access_token)
+                    localStorage.setItem('auth_token', user.auth_token)
                     dispatch(receiveLogin(user))
                 }
-            }).catch(err => console.log("Error: ", err))
+            })
+            // .then(history.push("/home"))
+            .catch(err => console.log("Error: ", err))
+            
     }
 }
 
@@ -80,9 +84,9 @@ function receiveLogout() {
 
 export function logoutUser() {
   return dispatch => {
+    console.log('logging out')
     dispatch(requestLogout())
-    localStorage.removeItem('id_token')
-    localStorage.removeItem('access_token')
+    localStorage.removeItem('auth_token')
     dispatch(receiveLogout())
   }
 }
@@ -92,11 +96,11 @@ export function signupUser(creds) {
   let config = {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `username=${creds.username}&password=${creds.password}`
+      body: `username=${creds.username}&password_digest=${creds.password}`
   }
   return dispatch => {
       dispatch(requestSignup(creds))
-      return fetch('http://localhost:3001/sessions/create', config)
+      return fetch('http://localhost:3000/authenticate', config)
       .then(response =>
           response.json().then(user => ({ user, response }))
           ).then(({ user, response }) => {
@@ -104,11 +108,11 @@ export function signupUser(creds) {
                   dispatch(loginError(user.message))
                   return Promise.reject(user)
               } else {
-                  localStorage.setItem('id_token', user.id_token)
-                  localStorage.setItem('id_token', user.access_token)
+                  localStorage.setItem('auth_token', user.auth_token)
                   dispatch(receiveLogin(user))
               }
-          }).catch(err => console.log("Error: ", err))
+          }).then(this.props.history.push("/home"))
+          .catch(err => console.log("Error: ", err))
   }
 }
 

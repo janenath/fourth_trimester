@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class ToDo extends Component {
+class Today extends Component {
     render() {
         return(
-            <div>
+            <main>
                 <h1>today</h1>
                 <ul>
-                    <li>read <a href="./articles">articles</a></li>
+                    <li>read <a href="./topics">articles</a></li>
                 </ul>
-            </div>
+            </main>
         )
     }
 }
 
-export default ToDo;
+export default Today;

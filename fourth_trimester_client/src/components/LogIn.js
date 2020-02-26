@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import PropTypes from 'prop-types'
 import { loginUser } from '../actions/userActions'
 
@@ -13,7 +19,7 @@ export default class LogIn extends Component {
                 <button onClick={(event) => this.handleClick(event)} className="btn btn-primary">
                 Login
                 </button>
-    
+                <Link to="/signup">Sign Up</Link>
                 {errorMessage &&
                     <p>{errorMessage}</p>
                 }

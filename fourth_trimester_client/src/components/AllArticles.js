@@ -4,44 +4,45 @@ import { connect } from 'react-redux';
 import { fetchArticles } from '../actions/articleActions';
 
 class AllArticles extends Component {
-    componentDidMount() {
-        this.props.fetchArticles();
-    }
+    // componentDidMount() {
+    //     fetchArticles();
+    // }
+    // render() {
+    //     const { error, loading, articles } = this.props;
 
-    render() {
-        const { error, loading, articles } = this.props;
+    //     if (error) {
+    //         return <div>Error! {error.message}</div>;
+    //     }
 
-        if (error) {
-            return <div>Error! {error.message}</div>;
-        }
+    //     if (loading) {
+    //         return<div>Loading...</div>;
+    //     }
 
-        if (loading) {
-            return<div>Loading...</div>;
-        }
-
-        const articleItems = articles.map(article => (
-            <div key={article.id}>
-                <h3>{article.title}</h3>
-                <p>{article.body}</p>
-            </div>
-        ));
+    //     const articleItems = articles.map(article => (
+    //         <div key={article.id}>
+    //             <h3>{article.title}</h3>
+    //             <p>{article.body}</p>
+    //         </div>
+    //     ));
+    render(){
         return(
-            <div>
-                <h1>articles</h1>
-                {articleItems}
-            </div>
+            <main>
+                <h1>topics</h1>
+                {/* {articleItems} */}
+            </main>
         )
     }
 }
-AllArticles.propTypes = {
-    fetchArticles: PropTypes.func.isRequired,
-    articles: PropTypes.array.isRequired
-}
+// AllArticles.propTypes = {
+//     fetchArticles: PropTypes.func.isRequired,
+//     articles: PropTypes.array.isRequired
+// }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
     articles: state.articles.items,
     loading: state.articles.loading,
     error: state.articles.error
 })
 
-export default connect(mapStateToProps, { fetchArticles })(AllArticles);
+
+export default connect(mapStateToProps)(AllArticles);

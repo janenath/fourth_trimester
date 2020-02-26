@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
+import Breathe from './Breathe'
 
 class Landing extends Component {
     render() {
         return(
-            <div>
-                <h1>welcome</h1>
-            </div>
+        <main>
+            <h1>welcome.</h1>
+            <h4>take a moment to just <br/>breathe.</h4>
+            <Breathe />
+            <Link to="/today">ready ></Link>
+        </main>
         )
     }
 }
 
 export default Landing;
+

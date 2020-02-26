@@ -16,7 +16,7 @@ export const fetchArticlesFailure = error => ({
   payload: { error }
 });
 
-export const fetchArticles = () => {
+export function fetchArticles () {
     return dispatch => {
       dispatch(fetchArticlesBegin());
       return fetch("http://localhost:3000/articles")
