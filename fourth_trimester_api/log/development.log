@@ -1979,3 +1979,13 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 183ms (Views: 9.6ms | ActiveRecord: 7.6ms | Allocations: 11834)
 
 
+Started GET "/articles" for ::1 at 2020-02-26 13:30:17 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/commands/authorize_api_request.rb:17:in `user'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:8:in `index'
+Completed 200 OK in 38ms (Views: 6.4ms | ActiveRecord: 5.9ms | Allocations: 10640)
+
+
