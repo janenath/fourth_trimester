@@ -16,7 +16,7 @@ import Landing from './Landing'
 import Today from './Today'
 import About from './About'
 import AllArticles from './AllArticles'
-import UserProfile from './UserProfile'
+import Screening from './Screening'
 import LogOut from './LogOut'
 import Splash from './Splash'
 
@@ -46,7 +46,7 @@ class Home extends Component {
                                     <NavLink to="/topics">topics</NavLink>
                                     </li>
                                     <li>
-                                    <NavLink to="/profile">profile</NavLink>
+                                    <NavLink to="/screening">screening</NavLink>
                                     </li>
                                 </ul>
                                 <div className="authContainer">
@@ -66,8 +66,8 @@ class Home extends Component {
                             <Route path = "/topics">
                                 <AllArticles />
                             </Route>
-                            <Route path = "/profile">
-                                <UserProfile />
+                            <Route path = "/screening">
+                                <Screening />
                             </Route>
                             <Route path = "/logout">
                                 <LogOut 

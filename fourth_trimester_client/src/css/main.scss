@@ -45,6 +45,7 @@ nav {
             font-size: 18px;
         }
     }
+
     .authContainer {
         display: flex;
         justify-content: flex-end;
@@ -113,6 +114,15 @@ main {
             font-size: inherit;
         }
     }
+    button {
+        background: $salmon;
+        border: none;
+        width: 100px;
+        height: 50px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+    }
     .breatheContainer {
         display: flex;
         align-items: center;
@@ -165,6 +175,7 @@ main {
         border-radius: 5px;
         color: white;
     }
+
 }
 
 

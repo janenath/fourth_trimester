@@ -87,6 +87,14 @@ main {
       letter-spacing: inherit;
       color: inherit;
       font-size: inherit; }
+  main button {
+    background: #FFB7BD;
+    border: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold; }
   main .breatheContainer {
     display: flex;
     align-items: center;

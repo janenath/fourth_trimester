@@ -13,10 +13,9 @@ export default class LogOut extends Component {
     render() {
         const { errorMessage } = this.props
         return (
-            <div>
-                <h1>log out</h1>
-                <button onClick={(event) => this.handleClick(event)}>log out</button>
-            </div>
+            <main>
+                <button onClick={(event) => this.handleClick(event)}>confirm log out</button>
+            </main>
         )  
 }
 

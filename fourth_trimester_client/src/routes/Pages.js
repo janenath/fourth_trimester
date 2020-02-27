@@ -19,7 +19,7 @@ import About from '../components/About'
 import Landing from '../components/Landing'
 import Today from '../components/Today'
 import AllArticles from '../components/AllArticles'
-import UserProfile from '../components/UserProfile'
+import Screening from '../components/Screening'
 import LogOut from '../components/LogOut'
 import NotFound from '../components/NotFound'
 
@@ -37,7 +37,7 @@ const Pages = () => {
             <LoggedInRoute path="/today" exact={true} component={Today}/>
             <LoggedInRoute path="/about" exact={true} component={About}/>
             <LoggedInRoute path="/topics" exact={true} component={AllArticles}/>
-            <LoggedInRoute path="/profile" exact={true} component={UserProfile}/>
+            <LoggedInRoute path="/screening" exact={true} component={Screening}/>
             <LoggedInRoute path="/logout" exact={true} component={LogOut}/>
             <Route component={NotFound}/>
         </Switch>

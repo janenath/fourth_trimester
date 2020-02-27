@@ -7,7 +7,7 @@ import { FETCH_ARTICLES_BEGIN, FETCH_ARTICLES_SUCCESS, FETCH_ARTICLES_FAILURE } 
 const axios = require ('axios')
 class AllArticles extends Component {
     callApi(){
-        let token = localStorage.getItem('auth_token') || null
+        let token = window.localStorage.getItem('auth_token') || null
         let config = {}
         if(token) {
             config = {
