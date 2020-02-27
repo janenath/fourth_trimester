@@ -1989,3 +1989,40 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 38ms (Views: 6.4ms | ActiveRecord: 5.9ms | Allocations: 10640)
 
 
+Started GET "/" for ::1 at 2020-02-26 16:34:04 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Jane/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jane/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 22.5ms | Allocations: 311)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 1593)
+
+
+Started POST "/authenticate" for ::1 at 2020-02-26 16:39:55 -0800
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"username"=>"test", "password_digest"=>"[FILTERED]"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/commands/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/commands/authenticate_user.rb:18:in `user'
+Completed 200 OK in 536ms (Views: 0.3ms | ActiveRecord: 13.5ms | Allocations: 6234)
+
+
+Started GET "/articles" for ::1 at 2020-02-26 16:40:23 -0800
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/commands/authorize_api_request.rb:17:in `user'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 6.5ms | ActiveRecord: 2.4ms | Allocations: 5907)
+
+
+Started POST "/authenticate" for ::1 at 2020-02-26 16:40:30 -0800
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"username"=>"test", "password_digest"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/commands/authenticate_user.rb:18:in `user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/commands/authenticate_user.rb:18:in `user'
+Completed 200 OK in 436ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1208)
+
+
