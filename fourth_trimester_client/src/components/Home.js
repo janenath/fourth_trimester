@@ -88,12 +88,13 @@ class Home extends Component {
 
 function mapStateToProps(state) {
 
-    const { auth } = state
+    const { auth, data } = state
     const { isAuthenticated, errorMessage } = auth
   
     return {
       isAuthenticated,
-      errorMessage
+      errorMessage,
+      data
     }
   }
   

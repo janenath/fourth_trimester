@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchArticleDetails } from '../actions/articleActions'
 
-
 const axios = require ('axios')
 class AllArticles extends Component {
-    
     componentDidMount() {
        this.props.fetchArticleDetails()
     }
     render(){
-        const { title, content, week, image } = this.props.data;
-        console.log(this.props.data)
+        console.log(this.props.articles)
         // if (error) {
         //     return <div>Error! {error.message}</div>;
         // }
@@ -26,10 +23,10 @@ class AllArticles extends Component {
         //     </div>
         // ));
         // console.log(articles)
+
         return(
             <main>
                 <h1>topics</h1>
-                {/* {articleItems} */}
             </main>
         )
     }
@@ -46,17 +43,22 @@ class AllArticles extends Component {
 // })
 
 
-
-
 // export default connect(mapStateToProps)(AllArticles);
 
 // export default App;
-const mapStateToProps = ({ data = {} }) => ({
-  data
-});
-export default connect(
-  mapStateToProps,
-  {
-    fetchArticleDetails
+// const mapStateToProps = ({ data = {} }) => ({
+//   data
+// });
+
+const mapStateToProps = state => ({
+  articles: state.articles
+})
+
+const mapDispatchToProps = dispatch => {
+  return{
+    fetchArticleDetails: () => dispatch(fetchArticleDetails())
   }
+}
+export default connect(
+  mapStateToProps, mapDispatchToProps
 )(AllArticles);
