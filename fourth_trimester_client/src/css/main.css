@@ -136,6 +136,30 @@ main {
   border-radius: 5px;
   color: white; }
 
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .articleContainer .article {
+    margin: 50px;
+    padding: 50px;
+    background: #f3f3f3;
+    display: flex; }
+  .articleContainer .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .articleContainer h3 {
+    margin-bottom: 30px; }
+  .articleContainer img {
+    margin: 10px;
+    width: 50%;
+    border: 10px #FFB7BD solid;
+    border-radius: 5px; }
+  .articleContainer p {
+    width: 50%; }
+
 @keyframes pulse {
   0%, 100% {
     transform: scale(0.1); }

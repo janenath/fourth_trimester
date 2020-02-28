@@ -3,30 +3,40 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchArticleDetails } from '../actions/articleActions'
 
-const axios = require ('axios')
 class AllArticles extends Component {
+
     componentDidMount() {
-       this.props.fetchArticleDetails()
+      this.props.fetchArticleDetails()
     }
+
     render(){
-        console.log(this.props.articles)
+      if (this.props.articles === null){
+        return <h1>loading...</h1>
+      }
+      const { articles } = this.props;
+        // console.log(Object.keys(this.props.articles.data))
         // if (error) {
         //     return <div>Error! {error.message}</div>;
         // }
         // if (loading) {
         //     return<div>Loading...</div>;
         // }
-        // const articleItems = this.props.articles.map(article => (
-        //     <div key={article.id}>
-        //         <h3>{article.title}</h3>
-        //         <p>{article.body}</p>
-        //     </div>
-        // ));
-        // console.log(articles)
+        const articleItems = articles.articles.map(article => (
+            <div className="article" key={article.id}>
+                <img src={article.image}></img>
+                <div className="textContainer">
+                  <h3>week {article.week}: {article.title}</h3>
+                  <p>{article.content}</p>
+                </div>
+            </div>
+        ));
 
         return(
             <main>
                 <h1>topics</h1>
+                <div className="articleContainer">
+                  {articleItems}
+                </div>  
             </main>
         )
     }
@@ -50,9 +60,11 @@ class AllArticles extends Component {
 //   data
 // });
 
-const mapStateToProps = state => ({
-  articles: state.articles
-})
+const mapStateToProps = state => {
+  return{
+    articles: state.articles
+  } 
+}
 
 const mapDispatchToProps = dispatch => {
   return{
