@@ -10,7 +10,7 @@ import {
     SIGNUP_FAILURE,
 } from '../actions/types';
 
-export default function authReducer(state = {isFetching: false, isAuthenticated: localStorage.getItem('id_token') ? true : false}, action) {
+export default function authReducer(state = {isFetching: false, isAuthenticated: localStorage.getItem('id_token') ? true : false, user: null}, action) {
     switch(action.type) {
         case LOGIN_REQUEST:
                 return Object.assign({}, state, {

@@ -21,11 +21,19 @@ class AllArticles extends Component {
         // if (loading) {
         //     return<div>Loading...</div>;
         // }
+        const processWeek = (week) => {
+          if(week<0){
+            return week = `${40+week} of pregnancy`
+          } else {
+            return `${week} postpartum`
+          }
+        }
+
         const articleItems = articles.articles.map(article => (
             <div className="article" key={article.id}>
                 <img src={article.image}></img>
                 <div className="textContainer">
-                  <h3>week {article.week}: {article.title}</h3>
+                  <h3>week {processWeek(article.week)}: <br/>{article.title}</h3>
                   <p>{article.content}</p>
                 </div>
             </div>
