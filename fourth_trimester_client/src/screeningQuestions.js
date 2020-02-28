@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-
 const screeningQuestions = [
     {
         question: "I have been able to laugh and see the funny side of things",
@@ -93,47 +91,3 @@ const screeningQuestions = [
     }
 
 ]
-
-function generateScreening(screeningQuestions, screeningContainer, resultsContainer, submitButton){
-    let output = [];
-    let answers;
-    for(let i=0; i<screeningQuestions.length; i++){
-        answers= [];
-        for(let answer in screeningQuestions[i].answers){
-            answers.push(
-                '<label>'
-                    + '<input type="radio" name="question'+i+'" value="'+answer+'">'
-                    + answer + ': '
-                    + screeningQuestions[i].answer
-                + '</label>'
-            );
-        }
-        output.push(
-            '<div class="question">' + screeningQuestions[i].question + '</div>'
-            + '<div class="answers">' + answers.join('') + '</div>'
-        )
-    }
-    return output = output.join('')
-}
-
-
-
-class Screening extends Component {
-
-
-    render() {
-        const questions = generateScreening(screeningQuestions)
-        return(
-            <main>
-                <h1>screening</h1>
-                <p>check the answer that comes closest to how you have felt in the past 7 days</p>
-                <div className="screeningContainer">
-                    {document.getElementsByClassName('screeningContainer').innerHTML = questions}
-                    <button id="submit">score</button>
-                </div>
-            </main>
-        )
-    }
-}
-
-export default Screening;

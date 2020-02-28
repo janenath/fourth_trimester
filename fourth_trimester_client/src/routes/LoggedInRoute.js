@@ -1,17 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import {
-  BrowserRouter as Router,
-  Switch,
   Route,
-  NavLink,
-  Redirect,
-  withRouter
 } from "react-router-dom";
-import { Provider, connect } from 'react-redux'
+import { connect } from 'react-redux'
 
 import history from '../history'
-import Home from '../components/Home'
 import LoggedOutRoute from './LoggedOutRoute'
 
 const LoggedInRoute = ({
@@ -25,7 +18,7 @@ const LoggedInRoute = ({
     return (
         <Route
             render={otherProps => (
-                <Home {...otherProps} />
+                <Component {...otherProps} />
             )} 
         />
 )}
