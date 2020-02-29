@@ -181,6 +181,11 @@ main {
   .articleContainer p {
     width: 80%; }
 
+.screeningContainer {
+  padding: 0; }
+  .screeningContainer h1 {
+    margin: 0.2em; }
+
 @keyframes pulse {
   0%, 100% {
     transform: scale(0.1); }
