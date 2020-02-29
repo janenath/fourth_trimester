@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Redirect,
-  withRouter
+  Route
 } from "react-router-dom";
 import { Provider, connect } from 'react-redux'
 
@@ -14,7 +9,6 @@ import './App.css'
 
 import history from './history'
 import Pages from './routes/Pages'
-import Splash from './components/Splash'
 
 import store from './store'
 

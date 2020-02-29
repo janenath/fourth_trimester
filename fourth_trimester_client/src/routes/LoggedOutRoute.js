@@ -1,15 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-  Redirect,
-  withRouter,
-  useHistory
+  Route
 } from "react-router-dom";
-import { Provider, connect } from 'react-redux'
+import { connect } from 'react-redux'
 
 import Splash from '../components/Splash'
 import history from '../history'

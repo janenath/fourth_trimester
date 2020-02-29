@@ -33,7 +33,6 @@ export function loginUser(creds) {
                     dispatch(receiveLogin(user))
                 }
             })
-            // .then(history.push("/home"))
             .catch(err => console.log("Error: ", err))
             
     }
@@ -111,7 +110,7 @@ export function signupUser(creds) {
                   localStorage.setItem('auth_token', user.auth_token)
                   dispatch(receiveLogin(user))
               }
-          }).then(this.props.history.push("/home"))
+          })
           .catch(err => console.log("Error: ", err))
   }
 }
