@@ -7,8 +7,9 @@ class Today extends Component {
         return(
             <main>
                 <h1>today</h1>
-                <ul>
-                    <li>read <a href="./topics">articles</a></li>
+                <ul className="todayContainer">
+                    <li>- read <a href="./topics">this week's article</a></li>
+                    <li>- complete <a href="./screening">postpartum depression screening</a></li>
                 </ul>
             </main>
         )

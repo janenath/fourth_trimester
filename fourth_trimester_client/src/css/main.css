@@ -186,6 +186,17 @@ main {
   .screeningContainer h1 {
     margin: 0.2em; }
 
+.todayContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f3f3f3;
+  width: 80%;
+  height: 200px;
+  font-size: 2em; }
+  .todayContainer li {
+    margin: 1em; }
+
 @keyframes pulse {
   0%, 100% {
     transform: scale(0.1); }
