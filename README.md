@@ -5,13 +5,6 @@
 The Fourth Trimester is a time of profound physical, emotional, and psychological transformation for parents and newborns alike. New mothers are particularly vulnerable during this time, and may be affected by a variety of challenges including postpartum mood disorders like depression or anxiety, sleep deprivation, physical discomfort, and feelings of isolation. The goal of the Fourth Trimester app is to provide resources for new parents such as informative articles for each week of this critical time period as well as validated mental health screenings.
 
 
-
-## Link to [Fourth Trimester](https://fourth-trimester-app.herokuapp.com/home)
-#### Username: test
-#### Password: test
-
-
-
 ## Technologies Used
 - Ruby on Rails
 - PostgreSQL
